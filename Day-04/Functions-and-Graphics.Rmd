@@ -1,0 +1,82 @@
+```{r}
+
+countOdds<- function(x){
+  sum( x %% 2)
+  
+}
+
+countOdds(1:9)
+
+```
+
+```{r}
+countEvens <- function(x)
+  sum((x+1) %% 2)
+
+countEvens(1:9)
+```
+
+```{r}
+
+hypotenusLength <- function(x,y) {
+  
+  return((x^2)+(y^2))
+   
+  }
+
+hypotenusLength(3,4)
+
+```
+
+```{r}
+lawofCosines<- function(a,b,t){
+  return(((a^2)+(b^2)-(2*a*b*cos(t)))^.5)
+}
+lawofCosines(13,84,pi/2)
+lawofCosines(13,84,0)
+lawofCosines(5,5,pi/3)
+```
+
+```{r}
+thetafromLengths<- function(i,o,p) {
+  return(acos(((p^2)-(i^2)-(o^2))/(-2*i*o)))
+  }
+thetafromLengths(3,4,5)
+  
+```
+
+```{r}
+canvas<- function(x,y) {
+  return(plot(x:y))
+  }
+
+canvas(1,10)
+
+drawCircle<- function(x,y,z,a){
+  border=NULL
+  
+symbols (x,y,circle=z,add=TRUE,bg=a)
+}
+drawCircle(5,5,3,"yellow")
+drawCircle(3,3,3,"red")
+drawCircle(2,3,3,"blue")
+drawCircle2<- function(x,y,z,b,a,...){
+  border=NULL
+  
+symbols (x,y,circles=z,add=TRUE,fg=b,bg=a,...)
+}
+
+
+```
+
+```{r}
+h<- c(12)
+canvas(1,10)
+drawCircle2(2,5,h,"blue",NULL)
+drawCircle2(3,5,.5,"black",NULL)
+drawCircle2(4,5,.5,"red",NULL)
+drawCircle2(2.5,4,.5,"yellow",NULL)
+drawCircle2(3.5,4,10,"green",NULL)
+
+
+```
