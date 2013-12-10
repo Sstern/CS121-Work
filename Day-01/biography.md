@@ -1,3 +1,8 @@
 # Sam Stern's Biography
 
-This is where I say interesting things about myself.
+I was born on May 1st, 1995 in Burnsville, Minnesota.  I have lived my whole life in Rosemount, MN until I moved to St. Paul in 2013 to attend Macalester College.  Before attending Macalester, I went through the Rosemount public school system and graduated from Rosemount High School.  I have swam competitivly since the third grade and continue to do so at Macalester.  I have had a summer job lifeguarding at the Apple Valley Family Aquatic Center since I was 16 and will continue to work there in the foreseable future. 
+
+
+image(x$x,x$y,https://www.google.com/search?q=sam+stern&espv=210&es_sm=93&source=lnms&tbm=isch&sa=X&ei=XTyeUtunBKSHygHtvYHoCw&ved=0CAkQ_AUoAQ&biw=1366&bih=642#facrc=_&imgdii=_&imgrc=7r9cMuNrEkJCpM%3A%3Bc6IP0N3wyLJoMM%3Bhttp%253A%252F%252Fimworld.aufeminin.com%252Fdossiers%252FD20090630%252FCooking-Up-a-Storm-1-111809_L.jpg%3Bhttp%253A%252F%252Fwww.sofeminine.co.uk%252Fmag%252Ffood%252Fd7464%252Fs27244.html%3B328%3B400)
+
+```
