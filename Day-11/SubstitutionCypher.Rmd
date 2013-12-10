@@ -1,0 +1,41 @@
+
+```{r}
+Alpha<-c(letters, LETTERS, "","^","$","!")
+Key2<-function(word){
+  word<-unlist(strsplit(word,split=NULL))
+  res<-character(length(word))
+  for(k in 1:length(word)){
+    res[k]<-which(word[k]==letters)
+  }
+  res<-paste(res,collapse="")
+  return(as.numeric(res))
+}
+Key2("zoo")
+Cypher<-function(word){
+  set.seed(Key2(word))
+  return(sample(Alpha))
+}
+Cypher("zoo")
+
+Encryption<-function(x,y,word){
+  chartr(x,y,word)
+}
+Encryption("z","Z","zoo")
+encrypte<-function(word,message){
+  Shuffled<-Cypher(word)
+  New<-paste(Shuffled,collapse="")
+  Old<-paste(Alpha,collapse="")
+  return(chartr(Old,New,message))
+}
+encrypte("zoo","Sam")
+dycrypte<-function(word,message){
+  Shuffled<-Cypher(word)
+  New<-paste(Shuffled,collapse="")
+  Old<-paste(Alpha,collapse="")
+  return(chartr(New,Old,message))
+}
+dycrypte("zoo","UnD")
+
+
+```
+
