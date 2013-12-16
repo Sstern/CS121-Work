@@ -1,0 +1,16 @@
+
+<style>
+.hiword {background:pink;}
+</style>
+This <span class='hiword' title='This one!'>set of words</span> has a tooltip.
+```{r results='asis'}
+formatWord<-function(word,translation,class){
+  <span> class='class' title='translation'< word </span>
+}
+
+formatWord("Hello", "hi there!", class = "hiword")
+
+
+
+
+
