@@ -1,0 +1,148 @@
+```{r}
+words <- readLines(url("http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt"))
+#Summary
+
+length(words[grep("^.$",words)])
+length(words[grep("^..$",words)])
+length(words[grep("^...$",words)])
+length(words[grep("^....$",words)])
+length(words[grep("^.....$",words)])
+length(words[grep("^......$",words)])
+length(words[grep("^.......$",words)])
+length(words[grep("^........$",words)])
+length(words[grep("^.........$",words)])
+length(words[grep("^..........$",words)])
+length(words[grep("^...........$",words)])
+length(words[grep("^............$",words)])
+length(words[grep("^.............$",words)])
+length(words[grep("^..............$",words)])
+length(words[grep("^...............$",words)])
+length(words[grep("^................$",words)])
+length(words[grep("^.................$",words)])
+length(words[grep("^..................$",words)])
+length(words[grep("^...................$",words)])
+length(words[grep("^....................$",words)])
+tail(words[grep("..................",words)],n=100L)
+length(words[grep("^a",words)])
+length(words[grep("^b",words)])
+length(words[grep("^c",words)])
+words[grep("q[^u]",words)]
+
+crossword<-function(x){
+  list <- grep(x, words)
+  return(words[list])
+}
+
+crossword("b..t")
+
+crosswordPattern<-function(a,length){
+  ""
+  grep(,words)
+}
+crosswordPattern("a",length=4)
+
+Scrabble<-function(b,a,n,k,e,r,s){
+  sam2<-words[grep(b,words)]
+  sam3<-grep(a,sam2,value=TRUE)
+  sam4<-grep(n,sam3,value=TRUE)
+  sam5<-grep(k,sam4,value=TRUE)
+  sam6<-grep(e,sam5,value=TRUE)
+  sam7<-grep(r,sam6,value=TRUE)
+  sam8<-grep(s,sam7,value=TRUE)
+  sam8
+}
+Scrabble("b","a","n","k","e","r","s")
+```
+
+```{r}
+words <- readLines(url("http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt"))
+```
+
+crosswordPattern<- function(x){
+ a<-c("a","b","c","d","e","f","g","h","i")
+  if(x[1]=="1"){
+    return(grep(x[1],words)
+  }
+   if(x[1]=="2"){
+     grep(.x[1],words)
+   } 
+    if(x[1]=="3"){
+      grep(..x[1],words)
+    }
+    if(x[1]=="4"){
+      grep(...x[1],words)
+    }
+    if(x[1]=="5"){
+      grep(....x[1],words)
+    }
+    if(x[1]=="6"){
+      grep(.....x[1],words)
+    }
+    if(x[1]=="7"){
+      grep(......x[1],words)
+    }
+    if(x[1]=="8"){
+      grep(.......x[1],words)
+    }
+    if(x[1]=="9"){
+      grep(........x[1],words)
+    }
+  if(x[2]=="1"){
+    
+  }
+   if(x[2]=="2"){
+     
+   } 
+    if(x[2]=="3"){
+      
+    }
+    if(x[2]=="4"){
+      
+    }
+    if(x[2]=="5"){
+      
+    }
+    if(x[2]=="6"){
+      
+    }
+    if(x[2]=="7"){
+      
+    }
+    if(x[2]=="8"){
+      
+    }
+    if(x[2]=="9"){
+      
+    }
+  if(x[3]=="1"){
+    
+  }
+   if(x[3]=="2"){
+     
+   } 
+    if(x[3]=="3"){
+      
+    }
+    if(x[3]=="4"){
+      
+    }
+    if(x[3]=="5"){
+      
+    }
+    if(x[3]=="6"){
+      
+    }
+    if(x[3]=="7"){
+      
+    }
+    if(x[3]=="8"){
+      
+    }
+    if(x[3]=="9"){
+      
+    }
+  
+  if(length(words[1])==x[3])
+  return(words[grep(a,words)],fixed=TRUE)
+}
+crosswordPattern(a=1,b=5,length=5)

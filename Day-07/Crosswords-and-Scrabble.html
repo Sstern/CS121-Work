@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<pre><code class="r">words &lt;- readLines(url(&quot;http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt&quot;))
+# Summary
+
+length(words[grep(&quot;^.$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 0
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^..$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 85
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^...$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 908
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^....$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 3686
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^.....$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 8258
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^......$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 14374
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^.......$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 21727
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^........$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 26447
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^.........$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 16658
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^..........$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 9199
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^...........$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 5296
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^............$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 3166
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^.............$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 1960
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^..............$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 1023
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^...............$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 557
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^................$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 261
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^.................$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 132
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^..................$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 48
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^...................$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 16
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^....................$&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 5
+</code></pre>
+
+<pre><code class="r">tail(words[grep(&quot;..................&quot;, words)], n = 100L)
+</code></pre>
+
+<pre><code>##  [1] &quot;absentmindednesses&quot;    &quot;adventitiousnesses&quot;   
+##  [3] &quot;antiadministration&quot;    &quot;anticonservationist&quot;  
+##  [5] &quot;antidiscrimination&quot;    &quot;apprehensivenesses&quot;   
+##  [7] &quot;biodegradabilities&quot;    &quot;bloodthirstinesses&quot;   
+##  [9] &quot;cantankerousnesses&quot;    &quot;characteristically&quot;   
+## [11] &quot;chemotherapeutical&quot;    &quot;comprehensivenesses&quot;  
+## [13] &quot;counteraccusations&quot;    &quot;counteraggressions&quot;   
+## [15] &quot;counterdemonstration&quot;  &quot;counterdemonstrations&quot;
+## [17] &quot;counterdemonstrator&quot;   &quot;counterdemonstrators&quot; 
+## [19] &quot;counterinflationary&quot;   &quot;counterpropagation&quot;   
+## [21] &quot;counterpropagations&quot;   &quot;counterretaliation&quot;   
+## [23] &quot;counterretaliations&quot;   &quot;counterrevolutions&quot;   
+## [25] &quot;countersuggestions&quot;    &quot;disinterestednesses&quot;  
+## [27] &quot;electrocardiograms&quot;    &quot;electrocardiograph&quot;   
+## [29] &quot;electrocardiographs&quot;   &quot;extraconstitutional&quot;  
+## [31] &quot;feeblemindednesses&quot;    &quot;heterogenousnesses&quot;   
+## [33] &quot;hydroelectricities&quot;    &quot;hyperaggressiveness&quot;  
+## [35] &quot;hyperaggressivenesses&quot; &quot;hyperconscientious&quot;   
+## [37] &quot;hypernationalistic&quot;    &quot;hypersensitiveness&quot;   
+## [39] &quot;hypersensitivenesses&quot;  &quot;hypersensitivities&quot;   
+## [41] &quot;inappropriatenesses&quot;   &quot;inconsideratenesses&quot;  
+## [43] &quot;indispensabilities&quot;    &quot;industrializations&quot;   
+## [45] &quot;interdenominational&quot;   &quot;interinstitutional&quot;   
+## [47] &quot;internationalizing&quot;    &quot;interrelatednesses&quot;   
+## [49] &quot;irreconcilabilities&quot;   &quot;irresponsibilities&quot;   
+## [51] &quot;lightheartednesses&quot;    &quot;microminiaturization&quot; 
+## [53] &quot;microminiaturizations&quot; &quot;miscellaneousnesses&quot;  
+## [55] &quot;misinterpretations&quot;    &quot;misrepresentations&quot;   
+## [57] &quot;multidenominational&quot;   &quot;nondiscriminations&quot;   
+## [59] &quot;obstreperousnesses&quot;    &quot;perpendicularities&quot;   
+## [61] &quot;postfertilizations&quot;    &quot;rehospitalizations&quot;   
+## [63] &quot;remunerativenesses&quot;    &quot;representativeness&quot;   
+## [65] &quot;representativenesses&quot;  &quot;simultaneousnesses&quot;   
+## [67] &quot;straightforwardest&quot;    &quot;subclassifications&quot;   
+## [69] &quot;subconsciousnesses&quot;    &quot;superintellectuals&quot;   
+## [71] &quot;superintelligences&quot;    &quot;unscrupulousnesses&quot;
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^a&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 6557
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^b&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 6848
+</code></pre>
+
+<pre><code class="r">length(words[grep(&quot;^c&quot;, words)])
+</code></pre>
+
+<pre><code>## [1] 10385
+</code></pre>
+
+<pre><code class="r">words[grep(&quot;q[^u]&quot;, words)]
+</code></pre>
+
+<pre><code>##  [1] &quot;buqsha&quot;  &quot;buqshas&quot; &quot;faqir&quot;   &quot;faqirs&quot;  &quot;qaid&quot;    &quot;qaids&quot;   &quot;qindar&quot; 
+##  [8] &quot;qindars&quot; &quot;qintar&quot;  &quot;qintars&quot; &quot;qiviut&quot;  &quot;qiviuts&quot; &quot;qoph&quot;    &quot;qophs&quot;
+</code></pre>
+
+<pre><code class="r">
+crossword &lt;- function(x) {
+    list &lt;- grep(x, words)
+    return(words[list])
+}
+
+crossword(&quot;b..t&quot;)
+</code></pre>
+
+<pre><code>##    [1] &quot;abaft&quot;            &quot;abattis&quot;          &quot;abattises&quot;       
+##    [4] &quot;abattoir&quot;         &quot;abattoirs&quot;        &quot;abbatial&quot;        
+##    [7] &quot;abbot&quot;            &quot;abbotcies&quot;        &quot;abbotcy&quot;         
+##   [10] &quot;abbots&quot;           &quot;abettal&quot;          &quot;abettals&quot;        
+##   [13] &quot;abetted&quot;          &quot;abetter&quot;          &quot;abetters&quot;        
+##   [16] &quot;abetting&quot;         &quot;abettor&quot;          &quot;abettors&quot;        
+##   [19] &quot;abiotic&quot;          &quot;ablate&quot;           &quot;ablated&quot;         
+##   [22] &quot;ablates&quot;          &quot;ablating&quot;         &quot;ablation&quot;        
+##   [25] &quot;ablations&quot;        &quot;ablative&quot;         &quot;ablatives&quot;       
+##   [28] &quot;abluted&quot;          &quot;ablution&quot;         &quot;ablutions&quot;       
+##   [31] &quot;aboiteau&quot;         &quot;aboiteaus&quot;        &quot;aboiteaux&quot;       
+##   [34] &quot;abort&quot;            &quot;aborted&quot;          &quot;aborter&quot;         
+##   [37] &quot;aborters&quot;         &quot;aborting&quot;         &quot;abortion&quot;        
+##   [40] &quot;abortions&quot;        &quot;abortive&quot;         &quot;aborts&quot;          
+##   [43] &quot;about&quot;            &quot;absorbent&quot;        &quot;abuttal&quot;         
+##   [46] &quot;abuttals&quot;         &quot;abutted&quot;          &quot;abutter&quot;         
+##   [49] &quot;abutters&quot;         &quot;abutting&quot;         &quot;abwatt&quot;          
+##   [52] &quot;abwatts&quot;          &quot;acerbest&quot;         &quot;airboat&quot;         
+##   [55] &quot;airboats&quot;         &quot;alabaster&quot;        &quot;alabasters&quot;      
+##   [58] &quot;albeit&quot;           &quot;antiabortion&quot;     &quot;antibacterial&quot;   
+##   [61] &quot;antibiotic&quot;       &quot;antibiotics&quot;      &quot;asbestic&quot;        
+##   [64] &quot;asbestos&quot;         &quot;asbestoses&quot;       &quot;asbestus&quot;        
+##   [67] &quot;asbestuses&quot;       &quot;babbitt&quot;          &quot;babbitted&quot;       
+##   [70] &quot;babbitting&quot;       &quot;babbitts&quot;         &quot;backbitten&quot;      
+##   [73] &quot;bacteria&quot;         &quot;bacterial&quot;        &quot;bacterin&quot;        
+##   [76] &quot;bacterins&quot;        &quot;bacteriologic&quot;    &quot;bacteriological&quot; 
+##   [79] &quot;bacteriologies&quot;   &quot;bacteriologist&quot;   &quot;bacteriologists&quot; 
+##   [82] &quot;bacteriology&quot;     &quot;bacterium&quot;        &quot;baht&quot;            
+##   [85] &quot;bahts&quot;            &quot;bait&quot;             &quot;baited&quot;          
+##   [88] &quot;baiter&quot;           &quot;baiters&quot;          &quot;baith&quot;           
+##   [91] &quot;baiting&quot;          &quot;baits&quot;            &quot;baltimore&quot;       
+##   [94] &quot;bantam&quot;           &quot;bantams&quot;          &quot;banter&quot;          
+##   [97] &quot;bantered&quot;         &quot;banterer&quot;         &quot;banterers&quot;       
+##  [100] &quot;bantering&quot;        &quot;banters&quot;          &quot;bantling&quot;        
+##  [103] &quot;bantlings&quot;        &quot;baptise&quot;          &quot;baptised&quot;        
+##  [106] &quot;baptises&quot;         &quot;baptisia&quot;         &quot;baptisias&quot;       
+##  [109] &quot;baptising&quot;        &quot;baptism&quot;          &quot;baptismal&quot;       
+##  [112] &quot;baptisms&quot;         &quot;baptist&quot;          &quot;baptists&quot;        
+##  [115] &quot;baptize&quot;          &quot;baptized&quot;         &quot;baptizer&quot;        
+##  [118] &quot;baptizers&quot;        &quot;baptizes&quot;         &quot;baptizing&quot;       
+##  [121] &quot;barbette&quot;         &quot;barbettes&quot;        &quot;bartend&quot;         
+##  [124] &quot;bartended&quot;        &quot;bartender&quot;        &quot;bartenders&quot;      
+##  [127] &quot;bartending&quot;       &quot;bartends&quot;         &quot;barter&quot;          
+##  [130] &quot;bartered&quot;         &quot;barterer&quot;         &quot;barterers&quot;       
+##  [133] &quot;bartering&quot;        &quot;barters&quot;          &quot;bartholomew&quot;     
+##  [136] &quot;bartisan&quot;         &quot;bartisans&quot;        &quot;bartizan&quot;        
+##  [139] &quot;bartizans&quot;        &quot;bast&quot;             &quot;bastard&quot;         
+##  [142] &quot;bastardies&quot;       &quot;bastardize&quot;       &quot;bastardized&quot;     
+##  [145] &quot;bastardizes&quot;      &quot;bastardizing&quot;     &quot;bastards&quot;        
+##  [148] &quot;bastardy&quot;         &quot;baste&quot;            &quot;basted&quot;          
+##  [151] &quot;baster&quot;           &quot;basters&quot;          &quot;bastes&quot;          
+##  [154] &quot;bastile&quot;          &quot;bastiles&quot;         &quot;bastille&quot;        
+##  [157] &quot;bastilles&quot;        &quot;basting&quot;          &quot;bastings&quot;        
+##  [160] &quot;bastion&quot;          &quot;bastioned&quot;        &quot;bastions&quot;        
+##  [163] &quot;basts&quot;            &quot;batt&quot;             &quot;battalia&quot;        
+##  [166] &quot;battalias&quot;        &quot;battalion&quot;        &quot;battalions&quot;      
+##  [169] &quot;batteau&quot;          &quot;batteaux&quot;         &quot;batted&quot;          
+##  [172] &quot;batten&quot;           &quot;battened&quot;         &quot;battener&quot;        
+##  [175] &quot;batteners&quot;        &quot;battening&quot;        &quot;battens&quot;         
+##  [178] &quot;batter&quot;           &quot;battered&quot;         &quot;batterie&quot;        
+##  [181] &quot;batteries&quot;        &quot;battering&quot;        &quot;batters&quot;         
+##  [184] &quot;battery&quot;          &quot;battier&quot;          &quot;battiest&quot;        
+##  [187] &quot;battik&quot;           &quot;battiks&quot;          &quot;batting&quot;         
+##  [190] &quot;battings&quot;         &quot;battle&quot;           &quot;battled&quot;         
+##  [193] &quot;battlefield&quot;      &quot;battlefields&quot;     &quot;battlement&quot;      
+##  [196] &quot;battlements&quot;      &quot;battler&quot;          &quot;battlers&quot;        
+##  [199] &quot;battles&quot;          &quot;battleship&quot;       &quot;battleships&quot;     
+##  [202] &quot;battling&quot;         &quot;batts&quot;            &quot;battu&quot;           
+##  [205] &quot;battue&quot;           &quot;battues&quot;          &quot;batty&quot;           
+##  [208] &quot;bawtie&quot;           &quot;bawties&quot;          &quot;bawty&quot;           
+##  [211] &quot;beat&quot;             &quot;beatable&quot;         &quot;beaten&quot;          
+##  [214] &quot;beater&quot;           &quot;beaters&quot;          &quot;beatific&quot;        
+##  [217] &quot;beatification&quot;    &quot;beatifications&quot;   &quot;beatified&quot;       
+##  [220] &quot;beatifies&quot;        &quot;beatify&quot;          &quot;beatifying&quot;      
+##  [223] &quot;beating&quot;          &quot;beatings&quot;         &quot;beatless&quot;        
+##  [226] &quot;beatnik&quot;          &quot;beatniks&quot;         &quot;beats&quot;           
+##  [229] &quot;bedtick&quot;          &quot;bedticks&quot;         &quot;bedtime&quot;         
+##  [232] &quot;bedtimes&quot;         &quot;beet&quot;             &quot;beetle&quot;          
+##  [235] &quot;beetled&quot;          &quot;beetles&quot;          &quot;beetling&quot;        
+##  [238] &quot;beetroot&quot;         &quot;beetroots&quot;        &quot;beets&quot;           
+##  [241] &quot;belt&quot;             &quot;belted&quot;           &quot;belting&quot;         
+##  [244] &quot;beltings&quot;         &quot;beltless&quot;         &quot;beltline&quot;        
+##  [247] &quot;beltlines&quot;        &quot;belts&quot;            &quot;beltway&quot;         
+##  [250] &quot;beltways&quot;         &quot;bent&quot;             &quot;benthal&quot;         
+##  [253] &quot;benthic&quot;          &quot;benthos&quot;          &quot;benthoses&quot;       
+##  [256] &quot;bents&quot;            &quot;bentwood&quot;         &quot;bentwoods&quot;       
+##  [259] &quot;berth&quot;            &quot;bertha&quot;           &quot;berthas&quot;         
+##  [262] &quot;berthed&quot;          &quot;berthing&quot;         &quot;berths&quot;          
+##  [265] &quot;best&quot;             &quot;bestead&quot;          &quot;besteaded&quot;       
+##  [268] &quot;besteading&quot;       &quot;besteads&quot;         &quot;bested&quot;          
+##  [271] &quot;bestial&quot;          &quot;bestialities&quot;     &quot;bestiality&quot;      
+##  [274] &quot;bestiaries&quot;       &quot;bestiary&quot;         &quot;besting&quot;         
+##  [277] &quot;bestir&quot;           &quot;bestirred&quot;        &quot;bestirring&quot;      
+##  [280] &quot;bestirs&quot;          &quot;bestow&quot;           &quot;bestowal&quot;        
+##  [283] &quot;bestowals&quot;        &quot;bestowed&quot;         &quot;bestowing&quot;       
+##  [286] &quot;bestows&quot;          &quot;bestrew&quot;          &quot;bestrewed&quot;       
+##  [289] &quot;bestrewing&quot;       &quot;bestrewn&quot;         &quot;bestrews&quot;        
+##  [292] &quot;bestrid&quot;          &quot;bestridden&quot;       &quot;bestride&quot;        
+##  [295] &quot;bestrides&quot;        &quot;bestriding&quot;       &quot;bestrode&quot;        
+##  [298] &quot;bestrow&quot;          &quot;bestrowed&quot;        &quot;bestrowing&quot;      
+##  [301] &quot;bestrown&quot;         &quot;bestrows&quot;         &quot;bests&quot;           
+##  [304] &quot;bestud&quot;           &quot;bestudded&quot;        &quot;bestudding&quot;      
+##  [307] &quot;bestuds&quot;          &quot;betta&quot;            &quot;bettas&quot;          
+##  [310] &quot;betted&quot;           &quot;better&quot;           &quot;bettered&quot;        
+##  [313] &quot;bettering&quot;        &quot;betterment&quot;       &quot;betterments&quot;     
+##  [316] &quot;betters&quot;          &quot;betting&quot;          &quot;bettor&quot;          
+##  [319] &quot;bettors&quot;          &quot;bhut&quot;             &quot;bhuts&quot;           
+##  [322] &quot;biathlon&quot;         &quot;biathlons&quot;        &quot;biltong&quot;         
+##  [325] &quot;biltongs&quot;         &quot;bint&quot;             &quot;bints&quot;           
+##  [328] &quot;biota&quot;            &quot;biotas&quot;           &quot;biotic&quot;          
+##  [331] &quot;biotical&quot;         &quot;biotics&quot;          &quot;biotin&quot;          
+##  [334] &quot;biotins&quot;          &quot;biotite&quot;          &quot;biotites&quot;        
+##  [337] &quot;biotitic&quot;         &quot;biotope&quot;          &quot;biotopes&quot;        
+##  [340] &quot;biotron&quot;          &quot;biotrons&quot;         &quot;biotype&quot;         
+##  [343] &quot;biotypes&quot;         &quot;biotypic&quot;         &quot;birth&quot;           
+##  [346] &quot;birthdate&quot;        &quot;birthdates&quot;       &quot;birthday&quot;        
+##  [349] &quot;birthdays&quot;        &quot;birthed&quot;          &quot;birthing&quot;        
+##  [352] &quot;birthplace&quot;       &quot;birthplaces&quot;      &quot;birthrate&quot;       
+##  [355] &quot;birthrates&quot;       &quot;births&quot;           &quot;bistate&quot;         
+##  [358] &quot;bister&quot;           &quot;bistered&quot;         &quot;bisters&quot;         
+##  [361] &quot;bistort&quot;          &quot;bistorts&quot;         &quot;bistouries&quot;      
+##  [364] &quot;bistoury&quot;         &quot;bistre&quot;           &quot;bistred&quot;         
+##  [367] &quot;bistres&quot;          &quot;bistro&quot;           &quot;bistroic&quot;        
+##  [370] &quot;bistros&quot;          &quot;bitt&quot;             &quot;bitted&quot;          
+##  [373] &quot;bitten&quot;           &quot;bitter&quot;           &quot;bittered&quot;        
+##  [376] &quot;bitterer&quot;         &quot;bitterest&quot;        &quot;bittering&quot;       
+##  [379] &quot;bitterly&quot;         &quot;bittern&quot;          &quot;bitterness&quot;      
+##  [382] &quot;bitternesses&quot;     &quot;bitterns&quot;         &quot;bitters&quot;         
+##  [385] &quot;bittier&quot;          &quot;bittiest&quot;         &quot;bitting&quot;         
+##  [388] &quot;bittings&quot;         &quot;bittock&quot;          &quot;bittocks&quot;        
+##  [391] &quot;bitts&quot;            &quot;bitty&quot;            &quot;blat&quot;            
+##  [394] &quot;blatancies&quot;       &quot;blatancy&quot;         &quot;blatant&quot;         
+##  [397] &quot;blate&quot;            &quot;blather&quot;          &quot;blathered&quot;       
+##  [400] &quot;blathering&quot;       &quot;blathers&quot;         &quot;blats&quot;           
+##  [403] &quot;blatted&quot;          &quot;blatter&quot;          &quot;blattered&quot;       
+##  [406] &quot;blattering&quot;       &quot;blatters&quot;         &quot;blatting&quot;        
+##  [409] &quot;blet&quot;             &quot;blether&quot;          &quot;blethered&quot;       
+##  [412] &quot;blethering&quot;       &quot;blethers&quot;         &quot;blets&quot;           
+##  [415] &quot;blite&quot;            &quot;blites&quot;           &quot;blithe&quot;          
+##  [418] &quot;blithely&quot;         &quot;blither&quot;          &quot;blithered&quot;       
+##  [421] &quot;blithering&quot;       &quot;blithers&quot;         &quot;blithesome&quot;      
+##  [424] &quot;blithest&quot;         &quot;blitz&quot;            &quot;blitzed&quot;         
+##  [427] &quot;blitzes&quot;          &quot;blitzing&quot;         &quot;blot&quot;            
+##  [430] &quot;blotch&quot;           &quot;blotched&quot;         &quot;blotches&quot;        
+##  [433] &quot;blotchier&quot;        &quot;blotchiest&quot;       &quot;blotching&quot;       
+##  [436] &quot;blotchy&quot;          &quot;blotless&quot;         &quot;blots&quot;           
+##  [439] &quot;blotted&quot;          &quot;blotter&quot;          &quot;blotters&quot;        
+##  [442] &quot;blottier&quot;         &quot;blottiest&quot;        &quot;blotting&quot;        
+##  [445] &quot;blotto&quot;           &quot;blotty&quot;           &quot;boat&quot;            
+##  [448] &quot;boatable&quot;         &quot;boatbill&quot;         &quot;boatbills&quot;       
+##  [451] &quot;boated&quot;           &quot;boatel&quot;           &quot;boatels&quot;         
+##  [454] &quot;boater&quot;           &quot;boaters&quot;          &quot;boating&quot;         
+##  [457] &quot;boatings&quot;         &quot;boatload&quot;         &quot;boatloads&quot;       
+##  [460] &quot;boatman&quot;          &quot;boatmen&quot;          &quot;boats&quot;           
+##  [463] &quot;boatsman&quot;         &quot;boatsmen&quot;         &quot;boatswain&quot;       
+##  [466] &quot;boatswains&quot;       &quot;boatyard&quot;         &quot;boatyards&quot;       
+##  [469] &quot;bobcat&quot;           &quot;bobcats&quot;          &quot;bobtail&quot;         
+##  [472] &quot;bobtailed&quot;        &quot;bobtailing&quot;       &quot;bobtails&quot;        
+##  [475] &quot;boite&quot;            &quot;boites&quot;           &quot;bolt&quot;            
+##  [478] &quot;bolted&quot;           &quot;bolter&quot;           &quot;bolters&quot;         
+##  [481] &quot;bolthead&quot;         &quot;boltheads&quot;        &quot;bolting&quot;         
+##  [484] &quot;boltonia&quot;         &quot;boltonias&quot;        &quot;boltrope&quot;        
+##  [487] &quot;boltropes&quot;        &quot;bolts&quot;            &quot;bombast&quot;         
+##  [490] &quot;bombastic&quot;        &quot;bombasts&quot;         &quot;bontebok&quot;        
+##  [493] &quot;bonteboks&quot;        &quot;boot&quot;             &quot;booted&quot;          
+##  [496] &quot;bootee&quot;           &quot;bootees&quot;          &quot;booteries&quot;       
+##  [499] &quot;bootery&quot;          &quot;booth&quot;            &quot;booths&quot;          
+##  [502] &quot;bootie&quot;           &quot;booties&quot;          &quot;booting&quot;         
+##  [505] &quot;bootjack&quot;         &quot;bootjacks&quot;        &quot;bootlace&quot;        
+##  [508] &quot;bootlaces&quot;        &quot;bootleg&quot;          &quot;bootlegged&quot;      
+##  [511] &quot;bootlegger&quot;       &quot;bootleggers&quot;      &quot;bootlegging&quot;     
+##  [514] &quot;bootlegs&quot;         &quot;bootless&quot;         &quot;bootlick&quot;        
+##  [517] &quot;bootlicked&quot;       &quot;bootlicking&quot;      &quot;bootlicks&quot;       
+##  [520] &quot;boots&quot;            &quot;booty&quot;            &quot;bort&quot;            
+##  [523] &quot;borts&quot;            &quot;borty&quot;            &quot;bortz&quot;           
+##  [526] &quot;bortzes&quot;          &quot;boston&quot;           &quot;bostons&quot;         
+##  [529] &quot;bott&quot;             &quot;bottle&quot;           &quot;bottled&quot;         
+##  [532] &quot;bottleneck&quot;       &quot;bottlenecks&quot;      &quot;bottler&quot;         
+##  [535] &quot;bottlers&quot;         &quot;bottles&quot;          &quot;bottling&quot;        
+##  [538] &quot;bottom&quot;           &quot;bottomed&quot;         &quot;bottomer&quot;        
+##  [541] &quot;bottomers&quot;        &quot;bottoming&quot;        &quot;bottomless&quot;      
+##  [544] &quot;bottomries&quot;       &quot;bottomry&quot;         &quot;bottoms&quot;         
+##  [547] &quot;botts&quot;            &quot;bout&quot;             &quot;boutique&quot;        
+##  [550] &quot;boutiques&quot;        &quot;bouts&quot;            &quot;boxthorn&quot;        
+##  [553] &quot;boxthorns&quot;        &quot;brat&quot;             &quot;brats&quot;           
+##  [556] &quot;brattice&quot;         &quot;bratticed&quot;        &quot;brattices&quot;       
+##  [559] &quot;bratticing&quot;       &quot;brattier&quot;         &quot;brattiest&quot;       
+##  [562] &quot;brattish&quot;         &quot;brattle&quot;          &quot;brattled&quot;        
+##  [565] &quot;brattles&quot;         &quot;brattling&quot;        &quot;bratty&quot;          
+##  [568] &quot;brethren&quot;         &quot;brit&quot;             &quot;britches&quot;        
+##  [571] &quot;brits&quot;            &quot;britska&quot;          &quot;britskas&quot;        
+##  [574] &quot;britt&quot;            &quot;brittle&quot;          &quot;brittled&quot;        
+##  [577] &quot;brittler&quot;         &quot;brittles&quot;         &quot;brittlest&quot;       
+##  [580] &quot;brittling&quot;        &quot;britts&quot;           &quot;britzka&quot;         
+##  [583] &quot;britzkas&quot;         &quot;britzska&quot;         &quot;britzskas&quot;       
+##  [586] &quot;broth&quot;            &quot;brothel&quot;          &quot;brothels&quot;        
+##  [589] &quot;brother&quot;          &quot;brothered&quot;        &quot;brotherhood&quot;     
+##  [592] &quot;brotherhoods&quot;     &quot;brothering&quot;       &quot;brotherliness&quot;   
+##  [595] &quot;brotherlinesses&quot;  &quot;brotherly&quot;        &quot;brothers&quot;        
+##  [598] &quot;broths&quot;           &quot;brothy&quot;           &quot;browbeat&quot;        
+##  [601] &quot;browbeaten&quot;       &quot;browbeating&quot;      &quot;browbeats&quot;       
+##  [604] &quot;brut&quot;             &quot;brutal&quot;           &quot;brutalities&quot;     
+##  [607] &quot;brutality&quot;        &quot;brutalize&quot;        &quot;brutalized&quot;      
+##  [610] &quot;brutalizes&quot;       &quot;brutalizing&quot;      &quot;brutally&quot;        
+##  [613] &quot;brute&quot;            &quot;bruted&quot;           &quot;brutely&quot;         
+##  [616] &quot;brutes&quot;           &quot;brutified&quot;        &quot;brutifies&quot;       
+##  [619] &quot;brutify&quot;          &quot;brutifying&quot;       &quot;bruting&quot;         
+##  [622] &quot;brutish&quot;          &quot;brutism&quot;          &quot;brutisms&quot;        
+##  [625] &quot;bumboat&quot;          &quot;bumboats&quot;         &quot;bunt&quot;            
+##  [628] &quot;bunted&quot;           &quot;bunter&quot;           &quot;bunters&quot;         
+##  [631] &quot;bunting&quot;          &quot;buntings&quot;         &quot;buntline&quot;        
+##  [634] &quot;buntlines&quot;        &quot;bunts&quot;            &quot;burthen&quot;         
+##  [637] &quot;burthened&quot;        &quot;burthening&quot;       &quot;burthens&quot;        
+##  [640] &quot;burton&quot;           &quot;burtons&quot;          &quot;bust&quot;            
+##  [643] &quot;bustard&quot;          &quot;bustards&quot;         &quot;busted&quot;          
+##  [646] &quot;buster&quot;           &quot;busters&quot;          &quot;bustic&quot;          
+##  [649] &quot;bustics&quot;          &quot;bustier&quot;          &quot;bustiest&quot;        
+##  [652] &quot;busting&quot;          &quot;bustle&quot;           &quot;bustled&quot;         
+##  [655] &quot;bustles&quot;          &quot;bustling&quot;         &quot;busts&quot;           
+##  [658] &quot;busty&quot;            &quot;butt&quot;             &quot;buttals&quot;         
+##  [661] &quot;butte&quot;            &quot;butted&quot;           &quot;butter&quot;          
+##  [664] &quot;buttercup&quot;        &quot;buttercups&quot;       &quot;buttered&quot;        
+##  [667] &quot;butterfat&quot;        &quot;butterfats&quot;       &quot;butterflies&quot;     
+##  [670] &quot;butterfly&quot;        &quot;butterier&quot;        &quot;butteries&quot;       
+##  [673] &quot;butteriest&quot;       &quot;buttering&quot;        &quot;buttermilk&quot;      
+##  [676] &quot;butternut&quot;        &quot;butternuts&quot;       &quot;butters&quot;         
+##  [679] &quot;butterscotch&quot;     &quot;butterscotches&quot;   &quot;buttery&quot;         
+##  [682] &quot;buttes&quot;           &quot;butties&quot;          &quot;butting&quot;         
+##  [685] &quot;buttock&quot;          &quot;buttocks&quot;         &quot;button&quot;          
+##  [688] &quot;buttoned&quot;         &quot;buttoner&quot;         &quot;buttoners&quot;       
+##  [691] &quot;buttonhole&quot;       &quot;buttonholes&quot;      &quot;buttoning&quot;       
+##  [694] &quot;buttons&quot;          &quot;buttony&quot;          &quot;buttress&quot;        
+##  [697] &quot;buttressed&quot;       &quot;buttresses&quot;       &quot;buttressing&quot;     
+##  [700] &quot;butts&quot;            &quot;butty&quot;            &quot;bystander&quot;       
+##  [703] &quot;bystanders&quot;       &quot;bystreet&quot;         &quot;bystreets&quot;       
+##  [706] &quot;cabestro&quot;         &quot;cabestros&quot;        &quot;cablet&quot;          
+##  [709] &quot;cablets&quot;          &quot;cabretta&quot;         &quot;cabrettas&quot;       
+##  [712] &quot;calibrate&quot;        &quot;calibrated&quot;       &quot;calibrates&quot;      
+##  [715] &quot;calibrating&quot;      &quot;calibration&quot;      &quot;calibrations&quot;    
+##  [718] &quot;calibrator&quot;       &quot;calibrators&quot;      &quot;cambist&quot;         
+##  [721] &quot;cambists&quot;         &quot;catboat&quot;          &quot;catboats&quot;        
+##  [724] &quot;celebrate&quot;        &quot;celebrated&quot;       &quot;celebrates&quot;      
+##  [727] &quot;celebrating&quot;      &quot;celebration&quot;      &quot;celebrations&quot;    
+##  [730] &quot;celebrator&quot;       &quot;celebrators&quot;      &quot;celebrities&quot;     
+##  [733] &quot;celebrity&quot;        &quot;cerebrate&quot;        &quot;cerebrated&quot;      
+##  [736] &quot;cerebrates&quot;       &quot;cerebrating&quot;      &quot;cerebration&quot;     
+##  [739] &quot;cerebrations&quot;     &quot;childbirth&quot;       &quot;childbirths&quot;     
+##  [742] &quot;cobalt&quot;           &quot;cobaltic&quot;         &quot;cobalts&quot;         
+##  [745] &quot;cobnut&quot;           &quot;cobnuts&quot;          &quot;cockboat&quot;        
+##  [748] &quot;cockboats&quot;        &quot;combatted&quot;        &quot;combatting&quot;      
+##  [751] &quot;combust&quot;          &quot;combusted&quot;        &quot;combustibilities&quot;
+##  [754] &quot;combustibility&quot;   &quot;combustible&quot;      &quot;combusting&quot;      
+##  [757] &quot;combustion&quot;       &quot;combustions&quot;      &quot;combustive&quot;      
+##  [760] &quot;combusts&quot;         &quot;counterrebuttal&quot;  &quot;counterrebuttals&quot;
+##  [763] &quot;cubist&quot;           &quot;cubistic&quot;         &quot;cubists&quot;         
+##  [766] &quot;deadbeat&quot;         &quot;deadbeats&quot;        &quot;doublet&quot;         
+##  [769] &quot;doublets&quot;         &quot;downbeat&quot;         &quot;downbeats&quot;       
+##  [772] &quot;drabbest&quot;         &quot;drabbet&quot;          &quot;drabbets&quot;        
+##  [775] &quot;dribblet&quot;         &quot;dribblets&quot;        &quot;driblet&quot;         
+##  [778] &quot;driblets&quot;         &quot;drumbeat&quot;         &quot;drumbeats&quot;       
+##  [781] &quot;dubieties&quot;        &quot;dubiety&quot;          &quot;dumbest&quot;         
+##  [784] &quot;ebbet&quot;            &quot;ebbets&quot;           &quot;embattle&quot;        
+##  [787] &quot;embattled&quot;        &quot;embattles&quot;        &quot;embattling&quot;      
+##  [790] &quot;embitter&quot;         &quot;embittered&quot;       &quot;embittering&quot;     
+##  [793] &quot;embitters&quot;        &quot;embrute&quot;          &quot;embruted&quot;        
+##  [796] &quot;embrutes&quot;         &quot;embruting&quot;        &quot;eyebolt&quot;         
+##  [799] &quot;eyebolts&quot;         &quot;faltboat&quot;         &quot;faltboats&quot;       
+##  [802] &quot;ferryboat&quot;        &quot;ferryboats&quot;       &quot;fibrotic&quot;        
+##  [805] &quot;filbert&quot;          &quot;filberts&quot;         &quot;filibuster&quot;      
+##  [808] &quot;filibustered&quot;     &quot;filibusterer&quot;     &quot;filibusterers&quot;   
+##  [811] &quot;filibustering&quot;    &quot;filibusters&quot;      &quot;fireboat&quot;        
+##  [814] &quot;fireboats&quot;        &quot;firebrat&quot;         &quot;firebrats&quot;       
+##  [817] &quot;fishboat&quot;         &quot;fishboats&quot;        &quot;flatboat&quot;        
+##  [820] &quot;flatboats&quot;        &quot;flybelt&quot;          &quot;flybelts&quot;        
+##  [823] &quot;flyboat&quot;          &quot;flyboats&quot;         &quot;foldboat&quot;        
+##  [826] &quot;foldboats&quot;        &quot;freeboot&quot;         &quot;freebooted&quot;      
+##  [829] &quot;freebooter&quot;       &quot;freebooters&quot;      &quot;freebooting&quot;     
+##  [832] &quot;freeboots&quot;        &quot;frostbitten&quot;      &quot;gabbart&quot;         
+##  [835] &quot;gabbarts&quot;         &quot;gadabout&quot;         &quot;gadabouts&quot;       
+##  [838] &quot;gibbet&quot;           &quot;gibbeted&quot;         &quot;gibbeting&quot;       
+##  [841] &quot;gibbets&quot;          &quot;gibbetted&quot;        &quot;gibbetting&quot;      
+##  [844] &quot;gibbsite&quot;         &quot;gibbsites&quot;        &quot;giblet&quot;          
+##  [847] &quot;giblets&quot;          &quot;gilbert&quot;          &quot;gilberts&quot;        
+##  [850] &quot;glabrate&quot;         &quot;glibbest&quot;         &quot;gobbet&quot;          
+##  [853] &quot;gobbets&quot;          &quot;goblet&quot;           &quot;goblets&quot;         
+##  [856] &quot;gunboat&quot;          &quot;gunboats&quot;         &quot;halbert&quot;         
+##  [859] &quot;halberts&quot;         &quot;hardboot&quot;         &quot;hardboots&quot;       
+##  [862] &quot;heartbeat&quot;        &quot;heartbeats&quot;       &quot;hellbent&quot;        
+##  [865] &quot;hereabout&quot;        &quot;hereabouts&quot;       &quot;hoofbeat&quot;        
+##  [868] &quot;hoofbeats&quot;        &quot;houseboat&quot;        &quot;houseboats&quot;      
+##  [871] &quot;howbeit&quot;          &quot;iceboat&quot;          &quot;iceboats&quot;        
+##  [874] &quot;imbitter&quot;         &quot;imbittered&quot;       &quot;imbittering&quot;     
+##  [877] &quot;imbitters&quot;        &quot;imbrute&quot;          &quot;imbruted&quot;        
+##  [880] &quot;imbrutes&quot;         &quot;imbruting&quot;        &quot;incombustible&quot;   
+##  [883] &quot;incumbent&quot;        &quot;incumbents&quot;       &quot;inkblot&quot;         
+##  [886] &quot;inkblots&quot;         &quot;invertibrate&quot;     &quot;invertibrates&quot;   
+##  [889] &quot;jackboot&quot;         &quot;jackboots&quot;        &quot;jackrabbit&quot;      
+##  [892] &quot;jackrabbits&quot;      &quot;jailbait&quot;         &quot;johnboat&quot;        
+##  [895] &quot;johnboats&quot;        &quot;keelboat&quot;         &quot;keelboats&quot;       
+##  [898] &quot;kibbutz&quot;          &quot;kibbutzim&quot;        &quot;kingbolt&quot;        
+##  [901] &quot;kingbolts&quot;        &quot;labiate&quot;          &quot;labiated&quot;        
+##  [904] &quot;labiates&quot;         &quot;labret&quot;           &quot;labrets&quot;         
+##  [907] &quot;lambast&quot;          &quot;lambaste&quot;         &quot;lambasted&quot;       
+##  [910] &quot;lambastes&quot;        &quot;lambasting&quot;       &quot;lambasts&quot;        
+##  [913] &quot;lambent&quot;          &quot;lambently&quot;        &quot;lambert&quot;         
+##  [916] &quot;lamberts&quot;         &quot;layabout&quot;         &quot;layabouts&quot;       
+##  [919] &quot;liberties&quot;        &quot;libertine&quot;        &quot;libertines&quot;      
+##  [922] &quot;liberty&quot;          &quot;librate&quot;          &quot;librated&quot;        
+##  [925] &quot;librates&quot;         &quot;librating&quot;        &quot;libretti&quot;        
+##  [928] &quot;librettist&quot;       &quot;librettists&quot;      &quot;libretto&quot;        
+##  [931] &quot;librettos&quot;        &quot;lifeboat&quot;         &quot;lifeboats&quot;       
+##  [934] &quot;longboat&quot;         &quot;longboats&quot;        &quot;marabout&quot;        
+##  [937] &quot;marabouts&quot;        &quot;motorboat&quot;        &quot;motorboats&quot;      
+##  [940] &quot;nonabsorbent&quot;     &quot;noncombustible&quot;   &quot;numbest&quot;         
+##  [943] &quot;oblate&quot;           &quot;oblately&quot;         &quot;oblates&quot;         
+##  [946] &quot;oblation&quot;         &quot;oblations&quot;        &quot;oblatory&quot;        
+##  [949] &quot;obliterate&quot;       &quot;obliterated&quot;      &quot;obliterates&quot;     
+##  [952] &quot;obliterating&quot;     &quot;obliteration&quot;     &quot;obliterations&quot;   
+##  [955] &quot;offbeat&quot;          &quot;offbeats&quot;         &quot;overbetted&quot;      
+##  [958] &quot;overbetting&quot;      &quot;pigboat&quot;          &quot;pigboats&quot;        
+##  [961] &quot;postpubertal&quot;     &quot;postpuberty&quot;      &quot;prebattle&quot;       
+##  [964] &quot;precombustion&quot;    &quot;prepubertal&quot;      &quot;pubertal&quot;        
+##  [967] &quot;puberties&quot;        &quot;puberty&quot;          &quot;rabbet&quot;          
+##  [970] &quot;rabbeted&quot;         &quot;rabbeting&quot;        &quot;rabbets&quot;         
+##  [973] &quot;rabbit&quot;           &quot;rabbited&quot;         &quot;rabbiter&quot;        
+##  [976] &quot;rabbiters&quot;        &quot;rabbiting&quot;        &quot;rabbitries&quot;      
+##  [979] &quot;rabbitry&quot;         &quot;rabbits&quot;          &quot;rabietic&quot;        
+##  [982] &quot;rebait&quot;           &quot;rebaited&quot;         &quot;rebaiting&quot;       
+##  [985] &quot;rebaits&quot;          &quot;rebaptize&quot;        &quot;rebaptized&quot;      
+##  [988] &quot;rebaptizes&quot;       &quot;rebaptizing&quot;      &quot;rebirth&quot;         
+##  [991] &quot;rebirths&quot;         &quot;rebuttal&quot;         &quot;rebuttals&quot;       
+##  [994] &quot;rebutted&quot;         &quot;rebutter&quot;         &quot;rebutters&quot;       
+##  [997] &quot;rebutting&quot;        &quot;rebutton&quot;         &quot;rebuttoned&quot;      
+## [1000] &quot;rebuttoning&quot;      &quot;rebuttons&quot;        &quot;recumbent&quot;       
+## [1003] &quot;redbait&quot;          &quot;redbaited&quot;        &quot;redbaiting&quot;      
+## [1006] &quot;redbaits&quot;         &quot;responsiblities&quot;  &quot;responsiblity&quot;   
+## [1009] &quot;resubmit&quot;         &quot;resubmits&quot;        &quot;resubmitted&quot;     
+## [1012] &quot;resubmitting&quot;     &quot;riblet&quot;           &quot;riblets&quot;         
+## [1015] &quot;ringbolt&quot;         &quot;ringbolts&quot;        &quot;riverboat&quot;       
+## [1018] &quot;riverboats&quot;       &quot;robust&quot;           &quot;robuster&quot;        
+## [1021] &quot;robustest&quot;        &quot;robustly&quot;         &quot;robustness&quot;      
+## [1024] &quot;robustnesses&quot;     &quot;roundabout&quot;       &quot;rowboat&quot;         
+## [1027] &quot;rowboats&quot;         &quot;runabout&quot;         &quot;runabouts&quot;       
+## [1030] &quot;sabbat&quot;           &quot;sabbath&quot;          &quot;sabbaths&quot;        
+## [1033] &quot;sabbatic&quot;         &quot;sabbats&quot;          &quot;sailboat&quot;        
+## [1036] &quot;sailboats&quot;        &quot;seaboot&quot;          &quot;seaboots&quot;        
+## [1039] &quot;sherbert&quot;         &quot;sherberts&quot;        &quot;showboat&quot;        
+## [1042] &quot;showboats&quot;        &quot;slyboots&quot;         &quot;sobeit&quot;          
+## [1045] &quot;sorbent&quot;          &quot;sorbents&quot;         &quot;speedboat&quot;       
+## [1048] &quot;speedboats&quot;       &quot;steamboat&quot;        &quot;steamboats&quot;      
+## [1051] &quot;stibnite&quot;         &quot;stibnites&quot;        &quot;stillbirth&quot;      
+## [1054] &quot;stillbirths&quot;      &quot;subabbot&quot;         &quot;subabbots&quot;       
+## [1057] &quot;subcategories&quot;    &quot;subcategory&quot;      &quot;subcutaneous&quot;    
+## [1060] &quot;subcutes&quot;         &quot;subcutis&quot;         &quot;subcutises&quot;      
+## [1063] &quot;subentries&quot;       &quot;subentry&quot;         &quot;sublate&quot;         
+## [1066] &quot;sublated&quot;         &quot;sublates&quot;         &quot;sublating&quot;       
+## [1069] &quot;sublet&quot;           &quot;sublethal&quot;        &quot;sublets&quot;         
+## [1072] &quot;subletting&quot;       &quot;subliterate&quot;      &quot;submit&quot;          
+## [1075] &quot;submits&quot;          &quot;submitted&quot;        &quot;submitting&quot;      
+## [1078] &quot;subnetwork&quot;       &quot;subnetworks&quot;      &quot;suboptic&quot;        
+## [1081] &quot;subset&quot;           &quot;subsets&quot;          &quot;subtitle&quot;        
+## [1084] &quot;subtitled&quot;        &quot;subtitles&quot;        &quot;subtitling&quot;      
+## [1087] &quot;subtotal&quot;         &quot;subtotaled&quot;       &quot;subtotaling&quot;     
+## [1090] &quot;subtotalled&quot;      &quot;subtotalling&quot;     &quot;subtotals&quot;       
+## [1093] &quot;superbest&quot;        &quot;surfboat&quot;         &quot;surfboats&quot;       
+## [1096] &quot;symbiot&quot;          &quot;symbiote&quot;         &quot;symbiotes&quot;       
+## [1099] &quot;symbiots&quot;         &quot;tablet&quot;           &quot;tableted&quot;        
+## [1102] &quot;tableting&quot;        &quot;tabletop&quot;         &quot;tabletops&quot;       
+## [1105] &quot;tablets&quot;          &quot;tabletted&quot;        &quot;tabletting&quot;      
+## [1108] &quot;thereabout&quot;       &quot;thereabouts&quot;      &quot;thumbnut&quot;        
+## [1111] &quot;thumbnuts&quot;        &quot;thunderbolt&quot;      &quot;thunderbolts&quot;    
+## [1114] &quot;tolbooth&quot;         &quot;tolbooths&quot;        &quot;tollbooth&quot;       
+## [1117] &quot;tollbooths&quot;       &quot;towboat&quot;          &quot;towboats&quot;        
+## [1120] &quot;trabeate&quot;         &quot;tugboat&quot;          &quot;tugboats&quot;        
+## [1123] &quot;ubieties&quot;         &quot;ubiety&quot;           &quot;umbrette&quot;        
+## [1126] &quot;umbrettes&quot;        &quot;unbeaten&quot;         &quot;unbelt&quot;          
+## [1129] &quot;unbelted&quot;         &quot;unbelting&quot;        &quot;unbelts&quot;         
+## [1132] &quot;unbent&quot;           &quot;unbitted&quot;         &quot;unbolt&quot;          
+## [1135] &quot;unbolted&quot;         &quot;unbolting&quot;        &quot;unbolts&quot;         
+## [1138] &quot;unbutton&quot;         &quot;unbuttoned&quot;       &quot;unbuttoning&quot;     
+## [1141] &quot;unbuttons&quot;        &quot;upbeat&quot;           &quot;upbeats&quot;         
+## [1144] &quot;vertebrate&quot;       &quot;vertebrates&quot;      &quot;vibist&quot;          
+## [1147] &quot;vibists&quot;          &quot;vibrate&quot;          &quot;vibrated&quot;        
+## [1150] &quot;vibrates&quot;         &quot;vibrating&quot;        &quot;vibration&quot;       
+## [1153] &quot;vibrations&quot;       &quot;vibrato&quot;          &quot;vibrator&quot;        
+## [1156] &quot;vibrators&quot;        &quot;vibratory&quot;        &quot;vibratos&quot;        
+## [1159] &quot;whereabouts&quot;      &quot;whitebait&quot;        &quot;whitebaits&quot;      
+## [1162] &quot;workboat&quot;         &quot;workboats&quot;
+</code></pre>
+
+<pre><code class="r">
+crosswordPattern &lt;- function(a, length) {
+    &quot;&quot;
+    grep(, words)
+}
+crosswordPattern(&quot;a&quot;, length = 4)
+</code></pre>
+
+<pre><code>## Error: argument &quot;pattern&quot; is missing, with no default
+</code></pre>
+
+<pre><code class="r">
+Scrabble &lt;- function(b, a, n, k, e, r, s) {
+    sam2 &lt;- words[grep(b, words)]
+    sam3 &lt;- grep(a, sam2, value = TRUE)
+    sam4 &lt;- grep(n, sam3, value = TRUE)
+    sam5 &lt;- grep(k, sam4, value = TRUE)
+    sam6 &lt;- grep(e, sam5, value = TRUE)
+    sam7 &lt;- grep(r, sam6, value = TRUE)
+    sam8 &lt;- grep(s, sam7, value = TRUE)
+    sam8
+}
+Scrabble(&quot;b&quot;, &quot;a&quot;, &quot;n&quot;, &quot;k&quot;, &quot;e&quot;, &quot;r&quot;, &quot;s&quot;)
+</code></pre>
+
+<pre><code>##  [1] &quot;backwardness&quot;     &quot;backwardnesses&quot;   &quot;bankers&quot;         
+##  [4] &quot;bankruptcies&quot;     &quot;bearskin&quot;         &quot;bearskins&quot;       
+##  [7] &quot;bedarkens&quot;        &quot;brackens&quot;         &quot;breakdowns&quot;      
+## [10] &quot;breakfasting&quot;     &quot;breakings&quot;        &quot;cabinetmakers&quot;   
+## [13] &quot;cabinetworks&quot;     &quot;counterblockades&quot; &quot;debarkations&quot;    
+## [16] &quot;disembarkation&quot;   &quot;disembarkations&quot;  &quot;disembarking&quot;    
+## [19] &quot;embarkations&quot;     &quot;ninebarks&quot;        &quot;pawnbrokers&quot;     
+## [22] &quot;remarkableness&quot;   &quot;remarkablenesses&quot; &quot;riverbanks&quot;      
+## [25] &quot;shrinkable&quot;       &quot;windbreaks&quot;       &quot;workableness&quot;    
+## [28] &quot;workablenesses&quot;
+</code></pre>
+
+<pre><code class="r">words &lt;- readLines(url(&quot;http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt&quot;))
+</code></pre>
+
+<p>crosswordPattern&lt;- function(x){
+ a&lt;-c(&ldquo;a&rdquo;,&ldquo;b&rdquo;,&ldquo;c&rdquo;,&ldquo;d&rdquo;,&ldquo;e&rdquo;,&ldquo;f&rdquo;,&ldquo;g&rdquo;,&ldquo;h&rdquo;,&ldquo;i&rdquo;)
+  if(x[1]==&ldquo;1&rdquo;){
+    return(grep(x[1],words)
+  }
+   if(x[1]==&ldquo;2&rdquo;){
+     grep(.x[1],words)
+   } 
+    if(x[1]==&ldquo;3&rdquo;){
+      grep(..x[1],words)
+    }
+    if(x[1]==&ldquo;4&rdquo;){
+      grep(&hellip;x[1],words)
+    }
+    if(x[1]==&ldquo;5&rdquo;){
+      grep(&hellip;.x[1],words)
+    }
+    if(x[1]==&ldquo;6&rdquo;){
+      grep(&hellip;..x[1],words)
+    }
+    if(x[1]==&ldquo;7&rdquo;){
+      grep(&hellip;&hellip;x[1],words)
+    }
+    if(x[1]==&ldquo;8&rdquo;){
+      grep(&hellip;&hellip;.x[1],words)
+    }
+    if(x[1]==&ldquo;9&rdquo;){
+      grep(&hellip;&hellip;..x[1],words)
+    }
+  if(x[2]==&ldquo;1&rdquo;){</p>
+
+<p>}
+   if(x[2]==&ldquo;2&rdquo;){</p>
+
+<p>} 
+    if(x[2]==&ldquo;3&rdquo;){</p>
+
+<pre><code>}
+if(x[2]==&quot;4&quot;){
+
+}
+if(x[2]==&quot;5&quot;){
+
+}
+if(x[2]==&quot;6&quot;){
+
+}
+if(x[2]==&quot;7&quot;){
+
+}
+if(x[2]==&quot;8&quot;){
+
+}
+if(x[2]==&quot;9&quot;){
+
+}
+</code></pre>
+
+<p>if(x[3]==&ldquo;1&rdquo;){</p>
+
+<p>}
+   if(x[3]==&ldquo;2&rdquo;){</p>
+
+<p>} 
+    if(x[3]==&ldquo;3&rdquo;){</p>
+
+<pre><code>}
+if(x[3]==&quot;4&quot;){
+
+}
+if(x[3]==&quot;5&quot;){
+
+}
+if(x[3]==&quot;6&quot;){
+
+}
+if(x[3]==&quot;7&quot;){
+
+}
+if(x[3]==&quot;8&quot;){
+
+}
+if(x[3]==&quot;9&quot;){
+
+}
+</code></pre>
+
+<p>if(length(words[1])==x[3])
+  return(words[grep(a,words)],fixed=TRUE)
+}
+crosswordPattern(a=1,b=5,length=5)</p>
+
+</body>
+
+</html>
+
