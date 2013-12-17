@@ -1,0 +1,44 @@
+```{r}
+
+testLatency<-function(x){
+  Latency<-0
+  through<-0
+  test<-0
+  d<-c()
+  repeat{
+  readline("Ready?")
+  cat("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+  q<-Sys.time()
+  Sys.sleep(rexp(20,rate=1/2))
+  w<-Sys.time()
+  a<-Sys.time()
+  readline("Press return!")
+  b<-Sys.time()
+  
+  Latency<-c((b-a),Latency)
+    test<-c(w-q,test)
+    through<-(through+1)
+  if(through==20)break
+  
+}
+  e<-c(Latency)
+  t<-c(test)
+  return(data.frame(e,t))
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
