@@ -178,8 +178,32 @@ hljs.initHighlightingOnLoad();
 </head>
 
 <body>
-<pre><code class="r"># I dont know what latex annotation is and I couldn&#39;t figure this out
+<pre><code class="r">
+addNSeq &lt;- function(n) {
 
+    # test if the answer is simple.  If so, return the simple answer.  YOUR TEST
+    # GOES HERE
+    repeat {
+        a &lt;- (n - 1)
+        q &lt;- n + a
+        n &lt;- a
+        if (a == 0) 
+            break
+    }
+    return(q)
+    # Simplify the problem and assemble the answer from the parts.  Your answer
+    # here return( something involving addNSeq(simpler) )
+}
+addNSeq(4)
+</code></pre>
+
+<pre><code>## [1] 1
+</code></pre>
+
+<pre><code class="r">addNSeq(2)
+</code></pre>
+
+<pre><code>## [1] 1
 </code></pre>
 
 </body>

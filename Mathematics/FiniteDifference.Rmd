@@ -1,5 +1,5 @@
 ```{r}
-#I dont know what latex annotation is and I coulfn't figure this out
+#I dont know what latex annotation is and I couldn't figure this out
 
 
 
